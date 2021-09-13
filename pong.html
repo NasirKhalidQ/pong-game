@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+            div#controls {
+                float: right;
+                margin: 50px;
+            }
+
+            .key {
+                width: 18px;
+                text-align: center;
+                border-radius: 3px;
+                background-color: lightgray;
+            }
+        </style>
+        <script src="./dist/pong.js"></script>
+    </head>
+    <body>
+        <h1>Pong</h1>
+        <svg id="canvas" width="600" height="600">
+            <g id="ball" transform="translate(300,300)">
+                <ellipse
+                    rx="10"
+                    ry="10"
+                    style="fill: white"
+                    stroke="white"
+                    stroke-width="2"
+                ></ellipse>
+            </g>
+            <rect
+                id="player1"
+                x="5"
+                y="200"
+                width="20"
+                height="70"
+                fill="green"
+                stroke="white"
+                stroke-width="3"
+                rx="10"
+                score="0"
+            />
+
+            <text id="p1score" x="150" y="60" font-size="60" fill="white">
+                0
+            </text>
+
+            <text id="p2score" x="400" y="60" font-size="60" fill="white">
+                0
+            </text>
+
+            <text
+                id="winner"
+                x="120"
+                y="300"
+                font-size="60"
+                fill="yellow"
+            ></text>
+
+            <rect
+                id="player2"
+                x="575"
+                y="200"
+                width="20"
+                height="70"
+                fill="red"
+                stroke="white"
+                stroke-width="3"
+                rx="10"
+                score="0"
+            />
+        </svg>
+        <div id="controls">
+            <h1>Controls:</h1>
+            <table>
+                <tr>
+                    <td>Go Up</td>
+                    <td><div id="Up" class="key">&#8679;</div></td>
+                </tr>
+                <tr>
+                    <td>Go Down</td>
+                    <td><div id="Down" class="key">&#8681;</div></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
